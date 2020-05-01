@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-lg-6">
+    <apptpicker-new-appt></apptpicker-new-appt>
+  </div>
+
+  <div class="col-lg-6">
+    <div *ngFor="let appointment of appointments">
+      <hr>
+      {{ appointment.date }}
+      {{ appointment.clientName }}
+    </div>
+  </div>
+</div>
