@@ -1,0 +1,26 @@
+
+<div class="new-appointment-form-container">
+
+<form #appointmentForm="ngForm" (submit)="save(); appointmentForm.reset()">
+
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="text"
+           class="form-control"
+           name="date"
+           id="date"
+           [(ngModel)]="model.date">
+  </div>
+
+  <div class="form-group">
+    <label for="clientName">Client name</label>
+    <input type="text"
+           class="form-control"
+           name="clientName"
+           id="clientName"
+           [(ngModel)]="model.clientName">
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Save">
+</form>
+</div>
