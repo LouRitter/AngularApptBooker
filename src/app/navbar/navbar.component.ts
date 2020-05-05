@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'apptpicker-navbar',
   templateUrl: './navbar.component.html',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   navbarOpen = false;
+  private logger = new Subject<boolean>();
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+
   }
 
 
@@ -18,4 +21,7 @@ export class NavbarComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
   }
 
+  getLogin(){
+    return localStorage.getItem('isLoggedIn');
+ }
 }
