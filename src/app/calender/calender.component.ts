@@ -7,6 +7,8 @@ import { AppointmentService } from '../shared/appointment.service';
 })
 export class CalenderComponent implements OnInit {
   appointments = [];
+  email: string;
+
   constructor(private appointmentService: AppointmentService) {
     appointmentService.appointmentCreated$.subscribe(appointment => {
       this.loadAppointments();
@@ -18,6 +20,8 @@ export class CalenderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.email = localStorage.getItem('email');
+
     this.appointments = this.appointmentService.getList();
 
   }
